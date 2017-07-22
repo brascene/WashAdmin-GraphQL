@@ -8,95 +8,24 @@ const find = lodash.find, filter = lodash.filter
 
 import sampleData from './helpers/fakeData'
 
-var typeDefs = [`
-type Query {
+import BasketSingleOrder from './graphql/schemes/BasketSingleOrder'
+import UserData from './graphql/schemes/userData'
+
+const RootQuery = `
+type RootQuery {
   hello: String,
   orders: [BasketSingleOrder],
   orderedFrom(userId: String!): UserData
 }
-
-fragment singleBasketItemFields on BasketSingleItem {
-  item
-  itemCount
-  unitPrice
-}
-
-input PushNewItemToBasket {
-  item: String,
-  itemCount: Int,
-  unitPrice: Int
-}
-
-input UserDataParameter {
-  mobileNumber: String,
-  userId: String,
-  userCity: String,
-  pickupLocation: LocationParameter,
-  deliveryLocation: LocationParameter,
-  pickupDateTime: String,
-  deliveryDateTime: String
-}
-
-input LocationParameter {
-  latitude: String,
-  longitude: String,
-  street: String
-}
-
-input PushNewOrder {
-  orderStatus: String,
-  orderId: String,
-  dateCreated: String,
-  basket: [PushNewItemToBasket],
-  totalItems: Int,
-  userData: UserDataParameter,
-  comeDirectly: Boolean
-}
-
-type Mutation {
-  addItemToBasket (newItem: PushNewItemToBasket!, orderId: String!): BasketSingleOrder,
-  addNewOrder (newOrder: PushNewOrder!): Boolean
-}
-
-type BasketSingleItem {
-  item: String,
-  itemCount: Int,
-  unitPrice: Int
-}
-
-type Location {
-  latitude: String,
-  longitude: String,
-  street: String
-}
-
-type UserData {
-  mobileNumber: String,
-  userId: String,
-  userCity: String,
-  pickupLocation: Location,
-  deliveryLocation: Location,
-  pickupDateTime: String,
-  deliveryDateTime: String
-}
-
-type BasketSingleOrder {
-  orderStatus: String,
-  orderId: String,
-  dateCreated: String,
-  basket: [BasketSingleItem],
-  totalItems: Int,
-  userData: UserData,
-  comeDirectly: Boolean
-}
-
+`
+const SchemaDefinition = `
 schema {
-  query: Query,
+  query: RootQuery,
   mutation: Mutation
-}`];
+}`
 
 var resolvers = {
-  Query: {
+  RootQuery: {
     hello: (root) => 'Hello world',
     orders: () => sampleData.orders,
     orderedFrom: (_, { id }) => find(sampleData.orders, { orderId: id})
@@ -122,7 +51,9 @@ var resolvers = {
   }
 };
 
-var schema = makeExecutableSchema({ typeDefs, resolvers })
+var schema = makeExecutableSchema({
+  typeDefs: [SchemaDefinition, RootQuery, BasketSingleOrder],
+  resolvers: resolvers })
 
 var app = express()
 
