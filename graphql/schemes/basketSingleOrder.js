@@ -1,5 +1,6 @@
 import BasketSingleItem from './basketSingleItem'
 import UserData from './userData'
+import sampleData from '../../helpers/fakeData'
 
 const BasketSingleOrder = `
 type BasketSingleOrder {
@@ -49,4 +50,5 @@ type Mutation {
   addNewOrder (newOrder: PushNewOrder!): Boolean
 }
 `
+
 export default () => [BasketSingleOrder, BasketSingleItem, UserData]

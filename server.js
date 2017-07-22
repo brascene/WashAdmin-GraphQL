@@ -6,10 +6,15 @@ var { makeExecutableSchema } = require('graphql-tools');
 var lodash = require('lodash')
 const find = lodash.find, filter = lodash.filter
 
+// Sample data
 import sampleData from './helpers/fakeData'
 
+// Schemes
 import BasketSingleOrder from './graphql/schemes/BasketSingleOrder'
 import UserData from './graphql/schemes/userData'
+
+// Resolvers
+import resolvers from './graphql/resolvers/main'
 
 const RootQuery = `
 type RootQuery {
@@ -23,33 +28,6 @@ schema {
   query: RootQuery,
   mutation: Mutation
 }`
-
-var resolvers = {
-  RootQuery: {
-    hello: (root) => 'Hello world',
-    orders: () => sampleData.orders,
-    orderedFrom: (_, { id }) => find(sampleData.orders, { orderId: id})
-  },
-  Mutation: {
-    addItemToBasket: (_, { newItem, id }) => {
-      const order = find(sampleData.orders, 'orderId', id)
-      console.log('Nasli smo order')
-      console.log(order)
-      if (!order) {
-        throw new Error('Nema te narudzbe')
-      }
-      order.basket.push(newItem)
-      return order
-    },
-    addNewOrder: (_, { newOrder }) => {
-      var allOrders = sampleData.orders
-      const currentTotal = allOrders.length
-      //VALIDACIJA NOVE
-      allOrders.push(newOrder)
-      return allOrders.length > currentTotal
-    }
-  }
-};
 
 var schema = makeExecutableSchema({
   typeDefs: [SchemaDefinition, RootQuery, BasketSingleOrder],

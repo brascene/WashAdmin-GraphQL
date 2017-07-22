@@ -1,0 +1,13 @@
+
+// Useful links
+
+// Documentation
+http://graphql.org/
+http://dev.apollodata.com
+https://www.compose.com/articles/using-graphql-with-mongodb/
+
+// Tutorial for usage with Swift
+https://www.raywenderlich.com/158433/getting-started-graphql-apollo-ios
+
+// Presentation Repository
+https://github.com/brascene/WashAdmin-GraphQL
