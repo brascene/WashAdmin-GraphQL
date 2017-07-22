@@ -1,0 +1,42 @@
+mutation{
+  addNewOrder(newOrder: {
+    orderStatus: "Poslana"
+    orderId: "2222222"
+    dateCreated: "danas"
+    basket: [
+      		{
+            item: "Majica"
+            itemCount: 4
+            unitPrice: 10
+          },
+          {
+            item: "Sorc"
+            itemCount: 10
+            unitPrice: 5
+          },
+          {
+            item: "Gace"
+            itemCount: 20
+            unitPrice: 2
+          }
+    ]
+    totalItems: 15
+    userData: {
+      mobileNumber: "06236669"
+      pickupLocation: {
+      	latitude: "tamo amo",
+  			longitude: "gore dolje",
+  			street: "hadzinesto"
+      }
+      deliveryLocation: {
+        latitude: "tamo amo",
+  			longitude: "gore dolje",
+  			street: "hadzinesto"
+      }
+      deliveryDateTime: "sutra"
+      pickupDateTime: "sutra"
+      userCity: "Konjic"
+    }
+    comeDirectly: false
+  })
+}
