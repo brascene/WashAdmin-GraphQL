@@ -1,15 +1,25 @@
-const Location = {
+const PickupLocation = {
   latitude: 'toliko i toliko',
-  longitude: 'toliko i toliko',
-  street: 'Ulica 1'
+  longitude: 'tamo vamo',
+  pickupStreet: 'Prkanj',
+  longitudeDelta: '0.001',
+  latitudeDelta: '0.01'
+}
+
+const DeliveryLocation = {
+  latitude: 'toliko i toliko',
+  longitude: 'tamo vamo',
+  deliveryStreet: 'Prkanj',
+  longitudeDelta: '0.001',
+  latitudeDelta: '0.01'
 }
 
 const UserData = {
-  mobileNumber: '555 555 555',
   userId: 'unique ID 1',
+  mobileNum: '555 555 555',
   userCity: 'City 1',
-  pickupLocation: Location,
-  deliveryLocation: Location,
+  pickupLocation: PickupLocation,
+  deliveryLocation: DeliveryLocation,
   pickupDateTime: 'pickup data 1',
   deliveryDateTime: 'delivery data 1'
 }
@@ -34,12 +44,11 @@ const basket3 = {
 
 const BasketSingleOrder = {
   orderStatus: 'Poslana',
-  orderId: '2332',
   dateCreated: 'danas',
-  basket: [basket1, basket2, basket3],
-  totalItems: 15,
   userData: UserData,
-  comeDirectly: false
+  comeDirectly: false,
+  orderId: '2332',
+  basket: [basket1, basket2, basket3],
 }
 
 const sampleData = {

@@ -5,12 +5,11 @@ import sampleData from '../../helpers/fakeData'
 const BasketSingleOrder = `
 type BasketSingleOrder {
   orderStatus: String,
-  orderId: String,
   dateCreated: String,
-  basket: [BasketSingleItem],
-  totalItems: Int,
   userData: UserData,
-  comeDirectly: Boolean
+  comeDirectly: Boolean,
+  orderId: String,
+  basket: [BasketSingleItem],
 }
 
 input PushNewItemToBasket {
@@ -20,7 +19,7 @@ input PushNewItemToBasket {
 }
 
 input UserDataParameter {
-  mobileNumber: String,
+  mobileNum: String,
   userId: String,
   userCity: String,
   pickupLocation: LocationParameter,

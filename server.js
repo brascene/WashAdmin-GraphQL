@@ -14,7 +14,7 @@ import BasketSingleOrder from './graphql/schemes/BasketSingleOrder'
 import UserData from './graphql/schemes/userData'
 
 // Resolvers
-import resolvers from './graphql/resolvers/main'
+import resolvers from './graphql/resolvers/withFetching'
 
 const RootQuery = `
 type RootQuery {
