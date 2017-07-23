@@ -49,6 +49,11 @@ public struct OrderDetails: GraphQLNamedFragment {
     "  userData {" +
     "    __typename" +
     "    userCity" +
+    "    mobileNum" +
+    "  }" +
+    "  basket {" +
+    "    __typename" +
+    "    item" +
     "  }" +
     "}"
 
@@ -58,21 +63,35 @@ public struct OrderDetails: GraphQLNamedFragment {
   public let orderId: String?
   public let orderStatus: String?
   public let userData: UserDatum?
+  public let basket: [Basket?]?
 
   public init(reader: GraphQLResultReader) throws {
     __typename = try reader.value(for: Field(responseName: "__typename"))
     orderId = try reader.optionalValue(for: Field(responseName: "orderId"))
     orderStatus = try reader.optionalValue(for: Field(responseName: "orderStatus"))
     userData = try reader.optionalValue(for: Field(responseName: "userData"))
+    basket = try reader.optionalList(for: Field(responseName: "basket"))
   }
 
   public struct UserDatum: GraphQLMappable {
     public let __typename: String
     public let userCity: String?
+    public let mobileNum: String?
 
     public init(reader: GraphQLResultReader) throws {
       __typename = try reader.value(for: Field(responseName: "__typename"))
       userCity = try reader.optionalValue(for: Field(responseName: "userCity"))
+      mobileNum = try reader.optionalValue(for: Field(responseName: "mobileNum"))
+    }
+  }
+
+  public struct Basket: GraphQLMappable {
+    public let __typename: String
+    public let item: String?
+
+    public init(reader: GraphQLResultReader) throws {
+      __typename = try reader.value(for: Field(responseName: "__typename"))
+      item = try reader.optionalValue(for: Field(responseName: "item"))
     }
   }
 }

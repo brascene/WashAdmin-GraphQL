@@ -10,12 +10,13 @@
 		68E8ECE1F2CAC9994651E27C /* Pods_WeshAdminGQLUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72F5F503D28B8E67867B098 /* Pods_WeshAdminGQLUITests.framework */; };
 		8D863A3429C0ADE4C9DB8599 /* Pods_WeshAdminGQLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B4B30B219A51B9EB7EC451 /* Pods_WeshAdminGQLTests.framework */; };
 		C41777ED1F24A8B600CAA599 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41777EC1F24A8B600CAA599 /* API.swift */; };
-		C41777EF1F24A8BD00CAA599 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = C41777EE1F24A8BD00CAA599 /* schema.json */; };
 		C41777F11F24A8E400CAA599 /* OrderListViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = C41777F01F24A8E400CAA599 /* OrderListViewController.graphql */; };
 		C41777F51F24AC0F00CAA599 /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41777F41F24AC0F00CAA599 /* WelcomeScreen.storyboard */; };
 		C41777F91F24ACCC00CAA599 /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41777F81F24ACCC00CAA599 /* WelcomeScreenViewController.swift */; };
 		C470D0F51F24AE78008ADE30 /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C470D0F41F24AE78008ADE30 /* OrderList.storyboard */; };
 		C470D0F71F24AE87008ADE30 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470D0F61F24AE87008ADE30 /* OrderListViewController.swift */; };
+		C470D0FB1F24B442008ADE30 /* OrdeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470D0F91F24B442008ADE30 /* OrdeListTableViewCell.swift */; };
+		C470D0FC1F24B442008ADE30 /* OrdeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C470D0FA1F24B442008ADE30 /* OrdeListTableViewCell.xib */; };
 		C4C238811F23EAE900971D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C238801F23EAE900971D15 /* AppDelegate.swift */; };
 		C4C238831F23EAE900971D15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C238821F23EAE900971D15 /* ViewController.swift */; };
 		C4C238861F23EAE900971D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C238841F23EAE900971D15 /* Main.storyboard */; };
@@ -50,12 +51,13 @@
 		809B089A5207460E34503A2C /* Pods-WeshAdminGQL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAdminGQL.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeshAdminGQL/Pods-WeshAdminGQL.release.xcconfig"; sourceTree = "<group>"; };
 		BD613324F0EF95C99FCC9E1C /* Pods-WeshAdminGQL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAdminGQL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeshAdminGQL/Pods-WeshAdminGQL.debug.xcconfig"; sourceTree = "<group>"; };
 		C41777EC1F24A8B600CAA599 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		C41777EE1F24A8BD00CAA599 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		C41777F01F24A8E400CAA599 /* OrderListViewController.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OrderListViewController.graphql; sourceTree = "<group>"; };
 		C41777F41F24AC0F00CAA599 /* WelcomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelcomeScreen.storyboard; sourceTree = "<group>"; };
 		C41777F81F24ACCC00CAA599 /* WelcomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewController.swift; sourceTree = "<group>"; };
 		C470D0F41F24AE78008ADE30 /* OrderList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrderList.storyboard; sourceTree = "<group>"; };
 		C470D0F61F24AE87008ADE30 /* OrderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
+		C470D0F91F24B442008ADE30 /* OrdeListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdeListTableViewCell.swift; sourceTree = "<group>"; };
+		C470D0FA1F24B442008ADE30 /* OrdeListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrdeListTableViewCell.xib; sourceTree = "<group>"; };
 		C4C2387D1F23EAE900971D15 /* WeshAdminGQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeshAdminGQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C238801F23EAE900971D15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4C238821F23EAE900971D15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -156,10 +158,20 @@
 		C470D0F31F24AE65008ADE30 /* Order List */ = {
 			isa = PBXGroup;
 			children = (
+				C470D0F81F24B413008ADE30 /* Cells */,
 				C470D0F41F24AE78008ADE30 /* OrderList.storyboard */,
 				C470D0F61F24AE87008ADE30 /* OrderListViewController.swift */,
 			);
 			name = "Order List";
+			sourceTree = "<group>";
+		};
+		C470D0F81F24B413008ADE30 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C470D0F91F24B442008ADE30 /* OrdeListTableViewCell.swift */,
+				C470D0FA1F24B442008ADE30 /* OrdeListTableViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		C4C238741F23EAE900971D15 = {
@@ -194,7 +206,6 @@
 				C4C238841F23EAE900971D15 /* Main.storyboard */,
 				C4C238871F23EAE900971D15 /* Assets.xcassets */,
 				C4C238891F23EAE900971D15 /* LaunchScreen.storyboard */,
-				C41777EE1F24A8BD00CAA599 /* schema.json */,
 				C4C2388C1F23EAE900971D15 /* Info.plist */,
 			);
 			path = WeshAdminGQL;
@@ -335,9 +346,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C41777EF1F24A8BD00CAA599 /* schema.json in Resources */,
 				C41777F51F24AC0F00CAA599 /* WelcomeScreen.storyboard in Resources */,
 				C470D0F51F24AE78008ADE30 /* OrderList.storyboard in Resources */,
+				C470D0FC1F24B442008ADE30 /* OrdeListTableViewCell.xib in Resources */,
 				C4C2388B1F23EAE900971D15 /* LaunchScreen.storyboard in Resources */,
 				C4C238881F23EAE900971D15 /* Assets.xcassets in Resources */,
 				C41777F11F24A8E400CAA599 /* OrderListViewController.graphql in Resources */,
@@ -519,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C470D0F71F24AE87008ADE30 /* OrderListViewController.swift in Sources */,
+				C470D0FB1F24B442008ADE30 /* OrdeListTableViewCell.swift in Sources */,
 				C4C238831F23EAE900971D15 /* ViewController.swift in Sources */,
 				C41777F91F24ACCC00CAA599 /* WelcomeScreenViewController.swift in Sources */,
 				C41777ED1F24A8B600CAA599 /* API.swift in Sources */,

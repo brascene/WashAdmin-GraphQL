@@ -178,7 +178,7 @@
           "description": "",
           "fields": [
             {
-              "name": "mobileNumber",
+              "name": "mobileNum",
               "description": "",
               "args": [],
               "type": {

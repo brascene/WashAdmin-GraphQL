@@ -5,6 +5,10 @@ fragment OrderDetails on BasketSingleOrder {
     orderStatus
     userData {
         userCity
+        mobileNum
+    }
+    basket {
+        item
     }
 }
 
