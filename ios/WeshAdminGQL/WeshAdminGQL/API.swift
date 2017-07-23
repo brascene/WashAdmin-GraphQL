@@ -40,6 +40,33 @@ public final class AllOrdersQuery: GraphQLQuery {
   }
 }
 
+public final class ChangeOrderStatusMutation: GraphQLMutation {
+  public static let operationDefinition =
+    "mutation ChangeOrderStatus($orderId: String!, $newStatus: String!) {" +
+    "  changeOrderStatus(orderId: $orderId, newStatus: $newStatus)" +
+    "}"
+
+  public let orderId: String
+  public let newStatus: String
+
+  public init(orderId: String, newStatus: String) {
+    self.orderId = orderId
+    self.newStatus = newStatus
+  }
+
+  public var variables: GraphQLMap? {
+    return ["orderId": orderId, "newStatus": newStatus]
+  }
+
+  public struct Data: GraphQLMappable {
+    public let changeOrderStatus: Int?
+
+    public init(reader: GraphQLResultReader) throws {
+      changeOrderStatus = try reader.optionalValue(for: Field(responseName: "changeOrderStatus", arguments: ["orderId": reader.variables["orderId"], "newStatus": reader.variables["newStatus"]]))
+    }
+  }
+}
+
 public struct OrderDetails: GraphQLNamedFragment {
   public static let fragmentDefinition =
     "fragment OrderDetails on BasketSingleOrder {" +

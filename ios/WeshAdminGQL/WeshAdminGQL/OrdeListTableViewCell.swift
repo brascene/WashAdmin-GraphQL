@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol OrderListCellOutput {
+    func whichButtonClicked(statusButton: UIButton, orderId: String)
+}
+
 class OrdeListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var orderTotal: UILabel!
@@ -16,13 +20,21 @@ class OrdeListTableViewCell: UITableViewCell {
     @IBOutlet weak var orderId: UILabel!
     @IBOutlet weak var orderStatus: UILabel!
     
+    // Change order status buttons
+    
+    @IBAction func orderZavrsena(_ sender: UIButton) {
+        self.output?.whichButtonClicked(statusButton: sender, orderId: self.orderId.text!)
+    }
+    
+    var output: OrderListCellOutput?
+    
     var singleOrder: OrderDetails? {
         didSet {
             orderStatus.text = singleOrder?.orderStatus
             orderId.text = singleOrder?.orderId
             orderLocation.text = singleOrder?.userData?.userCity
             orderOwner.text = singleOrder?.userData?.mobileNum
-            orderTotal.text = String(describing: singleOrder?.basket?.count)
+            orderTotal.text = String(describing: (singleOrder?.basket?.count)!)
         }
     }
 

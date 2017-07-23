@@ -9,15 +9,40 @@
 import UIKit
 import Apollo
 
-class OrderListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class OrderListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, OrderListCellOutput {
+    
+    //@IBOutlet weak var loader: UIActivityIndicatorView!
+    
+    var loader = UIActivityIndicatorView()
     
     var allOrders: [OrderDetails] = [] {
         didSet {
             tableView.reloadData()
         }
     }
-
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    func whichButtonClicked(statusButton: UIButton, orderId: String) {
+        loader.startAnimating()
+        if statusButton.currentTitle == "Završena" {
+            print("Zavrsena kliknuta zaista")
+
+            let changeOrderStatusMutation = ChangeOrderStatusMutation(orderId: orderId, newStatus: "Završena")
+            apollo.perform(mutation: changeOrderStatusMutation) { [weak self] result, error in
+                self?.loader.stopAnimating()
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                
+                if (result?.data?.changeOrderStatus as! Int) == 1 {
+                    self?.tableView.reloadData()
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +56,35 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
         let cellNib = UINib(nibName: "OrdeListTableViewCell", bundle: nil)
         self.tableView.register(cellNib, forCellReuseIdentifier: "OrdeListTableViewCell")
         self.tableView.separatorStyle = .none
+        self.tableView.allowsSelection = false
+        
+        self.automaticallyAdjustsScrollViewInsets = false
+        
+        // Loader
+        
+        loader.frame = CGRect(x: 0, y: 0, width: 66, height: 66)
+        loader.activityIndicatorViewStyle = .gray
+        loader.color = UIColor.black
+        loader.startAnimating()
+        
+        self.tableView.backgroundView = loader
         
         // All orders
         
+        fetchAllOrders()
+    }
+    
+    func fetchAllOrders() {
+        print("Zovnuta funkcija fetch all orders")
         let allOrdersQuery = AllOrdersQuery()
         apollo.fetch(query: allOrdersQuery) {
             [weak self] result, error in
             guard let allOrders = result?.data?.orders else { return }
             self?.allOrders = allOrders.map { ($0?.fragments.orderDetails)! }
+            
+            // Stop the indicator
+            self?.loader.stopAnimating()
+            self?.loader.hidesWhenStopped = true
         }
     }
 
@@ -58,14 +104,13 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrdeListTableViewCell", for: indexPath) as! OrdeListTableViewCell
         cell.singleOrder = allOrders[indexPath.row]
+        cell.output = self
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 330
     }
-        
-    
 
     /*
     // MARK: - Navigation
