@@ -1,7 +1,7 @@
 import rp from 'request-promise'
 
 import sampleData from '../../helpers/fakeData'
-import { getAllOrdersFromHeroku } from '../fetching/fetchFunctions'
+import { getAllOrdersFromHeroku, changeOrderStatus } from '../fetching/fetchFunctions'
 
 var resolvers = {
   RootQuery: {
@@ -27,6 +27,13 @@ var resolvers = {
       //VALIDACIJA NOVE
       allOrders.push(newOrder)
       return allOrders.length > currentTotal
+    },
+    changeOrderStatus: (_, { orderId, newStatus }) => {
+      let changeStatus = changeOrderStatus(orderId, newStatus)
+      console.log('Change status result')
+      console.log(changeStatus)
+      let orders = getAllOrdersFromHeroku()
+      return orders
     }
   }
 };

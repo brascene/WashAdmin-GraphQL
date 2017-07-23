@@ -2,7 +2,7 @@ import { PickupLocation, DeliveryLocation } from './location'
 
 const UserData = `
 type UserData {
-  mobileNumber: String,
+  mobileNum: String,
   userId: String,
   userCity: String,
   pickupLocation: PickupLocation,

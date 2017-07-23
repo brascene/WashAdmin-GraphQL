@@ -46,7 +46,8 @@ input PushNewOrder {
 
 type Mutation {
   addItemToBasket (newItem: PushNewItemToBasket!, orderId: String!): BasketSingleOrder,
-  addNewOrder (newOrder: PushNewOrder!): Boolean
+  addNewOrder (newOrder: PushNewOrder!): Boolean,
+  changeOrderStatus (orderId: String!, newStatus: String!) : Int
 }
 `
 

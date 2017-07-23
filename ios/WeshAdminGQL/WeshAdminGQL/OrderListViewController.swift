@@ -11,6 +11,9 @@ import Apollo
 
 class OrderListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, OrderListCellOutput {
     
+    @IBAction func backButton(_ sender: UIBarButtonItem) {
+        self.backButtonCustom()
+    }
     //@IBOutlet weak var loader: UIActivityIndicatorView!
     
     var loader = UIActivityIndicatorView()
@@ -18,6 +21,7 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
     var allOrders: [OrderDetails] = [] {
         didSet {
             tableView.reloadData()
+            print("Trebala se tabela reloadat")
         }
     }
     
@@ -26,7 +30,6 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
     func whichButtonClicked(statusButton: UIButton, orderId: String) {
         loader.startAnimating()
         if statusButton.currentTitle == "Završena" {
-            print("Zavrsena kliknuta zaista")
 
             let changeOrderStatusMutation = ChangeOrderStatusMutation(orderId: orderId, newStatus: "Završena")
             apollo.perform(mutation: changeOrderStatusMutation) { [weak self] result, error in
@@ -36,6 +39,9 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
                     print(error.localizedDescription)
                     return
                 }
+                
+                print("Poziv za reload tabele nakon mutacije")
+                self?.tableView.reloadData()
                 
                 if (result?.data?.changeOrderStatus as! Int) == 1 {
                     self?.tableView.reloadData()
@@ -74,8 +80,13 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
         fetchAllOrders()
     }
     
+    func backButtonCustom() {
+        print("Idemo nazad i fetchat opet datu")
+        self.navigationController?.popViewController(animated: true)
+        self.fetchAllOrders()
+    }
+    
     func fetchAllOrders() {
-        print("Zovnuta funkcija fetch all orders")
         let allOrdersQuery = AllOrdersQuery()
         apollo.fetch(query: allOrdersQuery) {
             [weak self] result, error in
@@ -85,6 +96,7 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
             // Stop the indicator
             self?.loader.stopAnimating()
             self?.loader.hidesWhenStopped = true
+            self?.tableView.reloadData()
         }
     }
 

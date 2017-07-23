@@ -50,7 +50,13 @@
                             <constraint firstItem="JGk-V9-pua" firstAttribute="top" secondItem="UOt-u0-xSR" secondAttribute="bottom" id="jYx-Ho-hkW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="EGm-gD-3vZ"/>
+                    <navigationItem key="navigationItem" id="EGm-gD-3vZ">
+                        <barButtonItem key="leftBarButtonItem" title="Nazad" id="rUO-Bj-lcP">
+                            <connections>
+                                <action selector="backButton:" destination="dIg-N9-v67" id="mlm-gQ-yrk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="JGk-V9-pua" id="i5f-E7-yof"/>
                     </connections>
