@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Apollo.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-WeshAdminGQL.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-WeshAdminGQLTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-WeshAdminGQLUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>02048A3EFB48DBAF1C3722D3FD90B970</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5DE99B0CB8F562C20E62282734A0A2C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B8D40568FFF2D8DAB3E32E21D92AFA65</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BCFA80DBF64DDF6AD6B0926BB8BCAFC4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

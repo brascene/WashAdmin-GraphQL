@@ -1,0 +1,25 @@
+# Fragments
+
+fragment OrderDetails on BasketSingleOrder {
+    orderId
+    orderStatus
+    userData {
+        userCity
+    }
+}
+
+# Queries
+
+query AllOrders {
+    orders {
+        ...OrderDetails
+    }
+}
+
+#Mutations
+#.. implement change order status
+#1. Add this mutation to the schema on server
+#2. Test it with graphql
+#3. Download schema again
+#4. Add change order status mutation to this file
+#5. Build project again

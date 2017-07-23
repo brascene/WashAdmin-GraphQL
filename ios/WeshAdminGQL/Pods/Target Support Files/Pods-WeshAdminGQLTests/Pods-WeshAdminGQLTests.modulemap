@@ -1,0 +1,6 @@
+framework module Pods_WeshAdminGQLTests {
+  umbrella header "Pods-WeshAdminGQLTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

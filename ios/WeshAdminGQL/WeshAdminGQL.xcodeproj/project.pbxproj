@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68E8ECE1F2CAC9994651E27C /* Pods_WeshAdminGQLUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72F5F503D28B8E67867B098 /* Pods_WeshAdminGQLUITests.framework */; };
+		8D863A3429C0ADE4C9DB8599 /* Pods_WeshAdminGQLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B4B30B219A51B9EB7EC451 /* Pods_WeshAdminGQLTests.framework */; };
+		C41777ED1F24A8B600CAA599 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41777EC1F24A8B600CAA599 /* API.swift */; };
+		C41777EF1F24A8BD00CAA599 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = C41777EE1F24A8BD00CAA599 /* schema.json */; };
+		C41777F11F24A8E400CAA599 /* OrderListViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = C41777F01F24A8E400CAA599 /* OrderListViewController.graphql */; };
+		C41777F51F24AC0F00CAA599 /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41777F41F24AC0F00CAA599 /* WelcomeScreen.storyboard */; };
+		C41777F91F24ACCC00CAA599 /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41777F81F24ACCC00CAA599 /* WelcomeScreenViewController.swift */; };
+		C470D0F51F24AE78008ADE30 /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C470D0F41F24AE78008ADE30 /* OrderList.storyboard */; };
+		C470D0F71F24AE87008ADE30 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470D0F61F24AE87008ADE30 /* OrderListViewController.swift */; };
 		C4C238811F23EAE900971D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C238801F23EAE900971D15 /* AppDelegate.swift */; };
 		C4C238831F23EAE900971D15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C238821F23EAE900971D15 /* ViewController.swift */; };
 		C4C238861F23EAE900971D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C238841F23EAE900971D15 /* Main.storyboard */; };
@@ -14,6 +23,7 @@
 		C4C2388B1F23EAE900971D15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C238891F23EAE900971D15 /* LaunchScreen.storyboard */; };
 		C4C238961F23EAE900971D15 /* WeshAdminGQLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C238951F23EAE900971D15 /* WeshAdminGQLTests.swift */; };
 		C4C238A11F23EAE900971D15 /* WeshAdminGQLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C238A01F23EAE900971D15 /* WeshAdminGQLUITests.swift */; };
+		DF6D6642F201033EAEEC9366 /* Pods_WeshAdminGQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E5A9439723667893EBE1C9 /* Pods_WeshAdminGQL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +44,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08BE1580EEDA86A4B205A020 /* Pods-WeshAdminGQLTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAdminGQLTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeshAdminGQLTests/Pods-WeshAdminGQLTests.debug.xcconfig"; sourceTree = "<group>"; };
+		133AE2BD3857CAA04C9B5DD9 /* Pods-WeshAdminGQLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAdminGQLUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeshAdminGQLUITests/Pods-WeshAdminGQLUITests.release.xcconfig"; sourceTree = "<group>"; };
+		36C45803ECCEF352BACD5ED3 /* Pods-WeshAdminGQLUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAdminGQLUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeshAdminGQLUITests/Pods-WeshAdminGQLUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		809B089A5207460E34503A2C /* Pods-WeshAdminGQL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAdminGQL.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeshAdminGQL/Pods-WeshAdminGQL.release.xcconfig"; sourceTree = "<group>"; };
+		BD613324F0EF95C99FCC9E1C /* Pods-WeshAdminGQL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAdminGQL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeshAdminGQL/Pods-WeshAdminGQL.debug.xcconfig"; sourceTree = "<group>"; };
+		C41777EC1F24A8B600CAA599 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		C41777EE1F24A8BD00CAA599 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		C41777F01F24A8E400CAA599 /* OrderListViewController.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OrderListViewController.graphql; sourceTree = "<group>"; };
+		C41777F41F24AC0F00CAA599 /* WelcomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelcomeScreen.storyboard; sourceTree = "<group>"; };
+		C41777F81F24ACCC00CAA599 /* WelcomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewController.swift; sourceTree = "<group>"; };
+		C470D0F41F24AE78008ADE30 /* OrderList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrderList.storyboard; sourceTree = "<group>"; };
+		C470D0F61F24AE87008ADE30 /* OrderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		C4C2387D1F23EAE900971D15 /* WeshAdminGQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeshAdminGQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C238801F23EAE900971D15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4C238821F23EAE900971D15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +69,10 @@
 		C4C2389C1F23EAE900971D15 /* WeshAdminGQLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeshAdminGQLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C238A01F23EAE900971D15 /* WeshAdminGQLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeshAdminGQLUITests.swift; sourceTree = "<group>"; };
 		C4C238A21F23EAE900971D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C72F5F503D28B8E67867B098 /* Pods_WeshAdminGQLUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeshAdminGQLUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3B4B30B219A51B9EB7EC451 /* Pods_WeshAdminGQLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeshAdminGQLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D73F816DA1B0F2F68C100EF4 /* Pods-WeshAdminGQLTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAdminGQLTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeshAdminGQLTests/Pods-WeshAdminGQLTests.release.xcconfig"; sourceTree = "<group>"; };
+		F5E5A9439723667893EBE1C9 /* Pods_WeshAdminGQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeshAdminGQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF6D6642F201033EAEEC9366 /* Pods_WeshAdminGQL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D863A3429C0ADE4C9DB8599 /* Pods_WeshAdminGQLTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +96,72 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68E8ECE1F2CAC9994651E27C /* Pods_WeshAdminGQLUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11AC0129610AF85DF27261A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD613324F0EF95C99FCC9E1C /* Pods-WeshAdminGQL.debug.xcconfig */,
+				809B089A5207460E34503A2C /* Pods-WeshAdminGQL.release.xcconfig */,
+				08BE1580EEDA86A4B205A020 /* Pods-WeshAdminGQLTests.debug.xcconfig */,
+				D73F816DA1B0F2F68C100EF4 /* Pods-WeshAdminGQLTests.release.xcconfig */,
+				36C45803ECCEF352BACD5ED3 /* Pods-WeshAdminGQLUITests.debug.xcconfig */,
+				133AE2BD3857CAA04C9B5DD9 /* Pods-WeshAdminGQLUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AB87DEC42F05A1FB995F8480 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5E5A9439723667893EBE1C9 /* Pods_WeshAdminGQL.framework */,
+				D3B4B30B219A51B9EB7EC451 /* Pods_WeshAdminGQLTests.framework */,
+				C72F5F503D28B8E67867B098 /* Pods_WeshAdminGQLUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C41777EB1F24A85800CAA599 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				C41777EC1F24A8B600CAA599 /* API.swift */,
+				C41777F01F24A8E400CAA599 /* OrderListViewController.graphql */,
+			);
+			name = GraphQL;
+			sourceTree = "<group>";
+		};
+		C41777F21F24ABE800CAA599 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C470D0F31F24AE65008ADE30 /* Order List */,
+				C41777F31F24ABF700CAA599 /* Welcome Screen */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		C41777F31F24ABF700CAA599 /* Welcome Screen */ = {
+			isa = PBXGroup;
+			children = (
+				C41777F41F24AC0F00CAA599 /* WelcomeScreen.storyboard */,
+				C41777F81F24ACCC00CAA599 /* WelcomeScreenViewController.swift */,
+			);
+			name = "Welcome Screen";
+			sourceTree = "<group>";
+		};
+		C470D0F31F24AE65008ADE30 /* Order List */ = {
+			isa = PBXGroup;
+			children = (
+				C470D0F41F24AE78008ADE30 /* OrderList.storyboard */,
+				C470D0F61F24AE87008ADE30 /* OrderListViewController.swift */,
+			);
+			name = "Order List";
+			sourceTree = "<group>";
+		};
 		C4C238741F23EAE900971D15 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +169,8 @@
 				C4C238941F23EAE900971D15 /* WeshAdminGQLTests */,
 				C4C2389F1F23EAE900971D15 /* WeshAdminGQLUITests */,
 				C4C2387E1F23EAE900971D15 /* Products */,
+				11AC0129610AF85DF27261A5 /* Pods */,
+				AB87DEC42F05A1FB995F8480 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,11 +187,14 @@
 		C4C2387F1F23EAE900971D15 /* WeshAdminGQL */ = {
 			isa = PBXGroup;
 			children = (
+				C41777F21F24ABE800CAA599 /* Components */,
+				C41777EB1F24A85800CAA599 /* GraphQL */,
 				C4C238801F23EAE900971D15 /* AppDelegate.swift */,
 				C4C238821F23EAE900971D15 /* ViewController.swift */,
 				C4C238841F23EAE900971D15 /* Main.storyboard */,
 				C4C238871F23EAE900971D15 /* Assets.xcassets */,
 				C4C238891F23EAE900971D15 /* LaunchScreen.storyboard */,
+				C41777EE1F24A8BD00CAA599 /* schema.json */,
 				C4C2388C1F23EAE900971D15 /* Info.plist */,
 			);
 			path = WeshAdminGQL;
@@ -132,9 +225,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4C238A51F23EAE900971D15 /* Build configuration list for PBXNativeTarget "WeshAdminGQL" */;
 			buildPhases = (
+				44B42AD4F2E85405EA89C57B /* [CP] Check Pods Manifest.lock */,
+				C4C238AE1F24A74C00971D15 /* QraphQL */,
 				C4C238791F23EAE900971D15 /* Sources */,
 				C4C2387A1F23EAE900971D15 /* Frameworks */,
 				C4C2387B1F23EAE900971D15 /* Resources */,
+				19C27CD20542553ADA522906 /* [CP] Embed Pods Frameworks */,
+				A2B46C967C91A06706DC64BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +246,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4C238A81F23EAE900971D15 /* Build configuration list for PBXNativeTarget "WeshAdminGQLTests" */;
 			buildPhases = (
+				3FF7CAD09EA7DF68DB8FC076 /* [CP] Check Pods Manifest.lock */,
 				C4C2388D1F23EAE900971D15 /* Sources */,
 				C4C2388E1F23EAE900971D15 /* Frameworks */,
 				C4C2388F1F23EAE900971D15 /* Resources */,
+				132E3831B8E479C686C8BAE1 /* [CP] Embed Pods Frameworks */,
+				8419194B68915E48D5DC8281 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +267,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4C238AB1F23EAE900971D15 /* Build configuration list for PBXNativeTarget "WeshAdminGQLUITests" */;
 			buildPhases = (
+				86D1E4B1C87D8C9D8E26430E /* [CP] Check Pods Manifest.lock */,
 				C4C238981F23EAE900971D15 /* Sources */,
 				C4C238991F23EAE900971D15 /* Frameworks */,
 				C4C2389A1F23EAE900971D15 /* Resources */,
+				5841E05A39C2A4EFD3567E00 /* [CP] Embed Pods Frameworks */,
+				D7D5FF8C2DF30C6A59855773 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,8 +335,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C41777EF1F24A8BD00CAA599 /* schema.json in Resources */,
+				C41777F51F24AC0F00CAA599 /* WelcomeScreen.storyboard in Resources */,
+				C470D0F51F24AE78008ADE30 /* OrderList.storyboard in Resources */,
 				C4C2388B1F23EAE900971D15 /* LaunchScreen.storyboard in Resources */,
 				C4C238881F23EAE900971D15 /* Assets.xcassets in Resources */,
+				C41777F11F24A8E400CAA599 /* OrderListViewController.graphql in Resources */,
 				C4C238861F23EAE900971D15 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,12 +361,167 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		132E3831B8E479C686C8BAE1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeshAdminGQLTests/Pods-WeshAdminGQLTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19C27CD20542553ADA522906 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeshAdminGQL/Pods-WeshAdminGQL-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FF7CAD09EA7DF68DB8FC076 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		44B42AD4F2E85405EA89C57B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5841E05A39C2A4EFD3567E00 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeshAdminGQLUITests/Pods-WeshAdminGQLUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8419194B68915E48D5DC8281 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeshAdminGQLTests/Pods-WeshAdminGQLTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86D1E4B1C87D8C9D8E26430E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A2B46C967C91A06706DC64BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeshAdminGQL/Pods-WeshAdminGQL-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4C238AE1F24A74C00971D15 /* QraphQL */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = QraphQL;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift\n";
+		};
+		D7D5FF8C2DF30C6A59855773 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeshAdminGQLUITests/Pods-WeshAdminGQLUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C4C238791F23EAE900971D15 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C470D0F71F24AE87008ADE30 /* OrderListViewController.swift in Sources */,
 				C4C238831F23EAE900971D15 /* ViewController.swift in Sources */,
+				C41777F91F24ACCC00CAA599 /* WelcomeScreenViewController.swift in Sources */,
+				C41777ED1F24A8B600CAA599 /* API.swift in Sources */,
 				C4C238811F23EAE900971D15 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +674,7 @@
 		};
 		C4C238A61F23EAE900971D15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD613324F0EF95C99FCC9E1C /* Pods-WeshAdminGQL.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WeshAdminGQL/Info.plist;
@@ -424,6 +687,7 @@
 		};
 		C4C238A71F23EAE900971D15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 809B089A5207460E34503A2C /* Pods-WeshAdminGQL.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WeshAdminGQL/Info.plist;
@@ -436,6 +700,7 @@
 		};
 		C4C238A91F23EAE900971D15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08BE1580EEDA86A4B205A020 /* Pods-WeshAdminGQLTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -450,6 +715,7 @@
 		};
 		C4C238AA1F23EAE900971D15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D73F816DA1B0F2F68C100EF4 /* Pods-WeshAdminGQLTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -464,6 +730,7 @@
 		};
 		C4C238AC1F23EAE900971D15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36C45803ECCEF352BACD5ED3 /* Pods-WeshAdminGQLUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = WeshAdminGQLUITests/Info.plist;
@@ -477,6 +744,7 @@
 		};
 		C4C238AD1F23EAE900971D15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 133AE2BD3857CAA04C9B5DD9 /* Pods-WeshAdminGQLUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = WeshAdminGQLUITests/Info.plist;
@@ -507,6 +775,7 @@
 				C4C238A71F23EAE900971D15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4C238A81F23EAE900971D15 /* Build configuration list for PBXNativeTarget "WeshAdminGQLTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +784,7 @@
 				C4C238AA1F23EAE900971D15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4C238AB1F23EAE900971D15 /* Build configuration list for PBXNativeTarget "WeshAdminGQLUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +793,7 @@
 				C4C238AD1F23EAE900971D15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

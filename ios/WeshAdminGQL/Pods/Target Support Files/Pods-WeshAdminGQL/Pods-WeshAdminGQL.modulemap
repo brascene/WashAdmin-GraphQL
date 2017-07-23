@@ -1,0 +1,6 @@
+framework module Pods_WeshAdminGQL {
+  umbrella header "Pods-WeshAdminGQL-umbrella.h"
+
+  export *
+  module * { export * }
+}
