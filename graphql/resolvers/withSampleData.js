@@ -21,34 +21,47 @@ var resolvers = {
     orderedFrom: (_, { id }) => find(orders, 'orderId', id)
   },
   Mutation: {
-    addItemToBasket: (_, { newItem, id }) => {
-      const order = find(orders, 'orderId', id)
-      if (!order) {
-        throw new Error('Nema te narudzbe')
-      }
-      order.basket.push(newItem)
-      return order
+    addItemToBasket: (_, { newItem, orderId }) => {
+
+      let ordersPromise =  Orders.findOne({ 'orderId': orderId }).exec()
+
+      return ordersPromise.then((orderData) => {
+        let currentBasket = orderData.basket
+        currentBasket.push(newItem)
+
+        let updateOrder = Orders.updateOne({ 'orderId': orderId}, { $set: { 'basket': currentBasket }}).exec()
+
+        return updateOrder.then((res) => {
+          console.log('Res iz update')
+          console.log(res)
+          let update = res.ok === 1 && res.n === 1 && res.nModified === 1
+          return update
+        })
+      })
+
     },
     addNewOrder: (_, { newOrder }) => {
-      var allOrders = orders
-      const currentTotal = allOrders.length
-      //VALIDACIJA NOVE
-      allOrders.push(newOrder)
-      return allOrders.length > currentTotal
+      let saveThisOrder = new Orders(newOrder)
+      let savePromise = saveThisOrder.save()
+
+      return savePromise.then((res) => {
+        console.log('Narudzba uspjesno spasena')
+        return res !== null
+      })
     },
     changeOrderStatus: (_, { orderId, newStatus }) => {
 
-      let result = Orders.findOneAndUpdate({ 'orderId': orderId }, { $set: { 'orderStatus': newStatus }}, (err, data) => {
-        if (err) {
-          console.log(err)
+      let updatePromise = Orders.updateOne({ 'orderId': orderId }, { $set: { 'orderStatus': newStatus }}).exec()
+      return updatePromise.then((res) => {
+        let updated = res.ok === 1 && res.n === 1 && res.nModified === 1
+        if (updated) {
+          console.log('Uspjesno upromijenjen status narudze')
         } else {
-          console.log('Apdejtovan')
-          console.log(data)
-          return data.orderStatus
+          console.log('Status narudzbe nije promijenjen')
         }
+        return updated
       })
-      console.log('Result: '+result)
-      return result === newStatus
+
     }
   }
 };

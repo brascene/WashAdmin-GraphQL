@@ -1,17 +1,23 @@
 
 // Useful links
 
-// Documentation
+// GeaphQL and Apollo
 http://graphql.org/
 http://dev.apollodata.com
+https://www.learnapollo.com
 https://www.compose.com/articles/using-graphql-with-mongodb/
 https://dev-blog.apollodata.com/bringing-graphql-to-ios-fc46423befa1
+
+// JS mongoose queries and promises
+http://blog.revathskumar.com/2015/07/using-promises-with-mongoosejs.html
+http://mongoosejs.com/docs/promises.html
+https://eddywashere.com/blog/switching-out-callbacks-with-promises-in-mongoose/
 
 // Fetching data from server
 https://github.com/request/request-promise
 
-// Tutorial for usage with Swift
+// Tutorial for GraphQL and Apollo usage with Swift
 https://www.raywenderlich.com/158433/getting-started-graphql-apollo-ios
 
-// Presentation Repository
+// Project Github Repository
 https://github.com/brascene/WashAdmin-GraphQL
