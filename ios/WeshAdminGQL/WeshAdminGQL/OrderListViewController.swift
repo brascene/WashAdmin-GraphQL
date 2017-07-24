@@ -9,7 +9,7 @@
 import UIKit
 import Apollo
 
-class OrderListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, OrderListCellOutput {
+class OrderListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, OrderListCellOutput, WelcomeOutput {
     
     @IBAction func backButton(_ sender: UIBarButtonItem) {
         self.backButtonCustom()
@@ -21,11 +21,25 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
     var allOrders: [OrderDetails] = [] {
         didSet {
             tableView.reloadData()
-            print("Trebala se tabela reloadat")
         }
     }
     
+    var ordersWatcher: GraphQLQueryWatcher<AllOrdersQuery>?
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    deinit {
+        ordersWatcher?.cancel()
+    }
+    
+    func fetchAgain() {
+        let allOrdersQuery = AllOrdersQuery()
+        apollo.fetch(query: allOrdersQuery) {
+            [weak self] result, error in
+            guard let allOrders = result?.data?.orders else { return }
+            self?.allOrders = allOrders.map { ($0?.fragments.orderDetails)! }
+        }
+    }
     
     func whichButtonClicked(statusButton: UIButton, orderId: String) {
         loader.startAnimating()
@@ -39,11 +53,9 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
                     print(error.localizedDescription)
                     return
                 }
-                
-                print("Poziv za reload tabele nakon mutacije")
-                self?.tableView.reloadData()
-                
-                if (result?.data?.changeOrderStatus as! Int) == 1 {
+                                
+                if result?.data?.changeOrderStatus?.orderStatus == "Završena" {
+                    //self?.fetchAllOrders() ovo ne treba ako stavimo watcher
                     self?.tableView.reloadData()
                 }
             }
@@ -80,15 +92,19 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
         fetchAllOrders()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        fetchAllOrders()
+    }
+    
     func backButtonCustom() {
-        print("Idemo nazad i fetchat opet datu")
         self.navigationController?.popViewController(animated: true)
-        self.fetchAllOrders()
     }
     
     func fetchAllOrders() {
         let allOrdersQuery = AllOrdersQuery()
-        apollo.fetch(query: allOrdersQuery) {
+        ordersWatcher = apollo.watch(query: allOrdersQuery) {
             [weak self] result, error in
             guard let allOrders = result?.data?.orders else { return }
             self?.allOrders = allOrders.map { ($0?.fragments.orderDetails)! }

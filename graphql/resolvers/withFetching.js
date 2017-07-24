@@ -32,8 +32,7 @@ var resolvers = {
       let changeStatus = changeOrderStatus(orderId, newStatus)
       console.log('Change status result')
       console.log(changeStatus)
-      let orders = getAllOrdersFromHeroku()
-      return orders
+      return changeStatus
     }
   }
 };

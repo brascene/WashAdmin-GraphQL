@@ -583,8 +583,8 @@
                 }
               ],
               "type": {
-                "kind": "SCALAR",
-                "name": "Int",
+                "kind": "OBJECT",
+                "name": "BasketSingleOrder",
                 "ofType": null
               },
               "isDeprecated": false,

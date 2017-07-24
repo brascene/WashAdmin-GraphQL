@@ -12,6 +12,12 @@ type BasketSingleOrder {
   basket: [BasketSingleItem],
 }
 
+type UpdateResult {
+  n: Int,
+  nModified: Int,
+  ok: Int
+}
+
 input PushNewItemToBasket {
   item: String,
   itemCount: Int,
@@ -47,7 +53,7 @@ input PushNewOrder {
 type Mutation {
   addItemToBasket (newItem: PushNewItemToBasket!, orderId: String!): BasketSingleOrder,
   addNewOrder (newOrder: PushNewOrder!): Boolean,
-  changeOrderStatus (orderId: String!, newStatus: String!) : Int
+  changeOrderStatus (orderId: String!, newStatus: String!) : Boolean
 }
 `
 
