@@ -8,16 +8,10 @@
 
 import UIKit
 
-protocol WelcomeOutput {
-    func fetchAgain()
-}
-
 class WelcomeScreenViewController: UIViewController {
 
     @IBOutlet weak var orderListBtn: UIButton!
-    
-    var output: WelcomeOutput?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,8 +29,6 @@ class WelcomeScreenViewController: UIViewController {
     func goToList() {
         let OrderListStoryboard: UIStoryboard = UIStoryboard(name: "OrderList", bundle: nil)
         let nextController = OrderListStoryboard.instantiateViewController(withIdentifier: "OrderListViewController") as! OrderListViewController
-        self.output = nextController
-        self.output?.fetchAgain()
         self.navigationController?.pushViewController(nextController, animated: true)
     }
     

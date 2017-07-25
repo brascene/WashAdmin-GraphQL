@@ -9,7 +9,7 @@
 import UIKit
 import Apollo
 
-class OrderListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, OrderListCellOutput, WelcomeOutput {
+class OrderListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, OrderListCellOutput {
     
     @IBAction func backButton(_ sender: UIBarButtonItem) {
         self.backButtonCustom()
@@ -32,34 +32,29 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
         ordersWatcher?.cancel()
     }
     
-    func fetchAgain() {
-        let allOrdersQuery = AllOrdersQuery()
-        apollo.fetch(query: allOrdersQuery) {
-            [weak self] result, error in
-            guard let allOrders = result?.data?.orders else { return }
-            self?.allOrders = allOrders.map { ($0?.fragments.orderDetails)! }
-        }
-    }
-    
     func whichButtonClicked(statusButton: UIButton, orderId: String) {
-        loader.startAnimating()
-        if statusButton.currentTitle == "Završena" {
+        
+            let currentTitle = statusButton.currentTitle
 
-            let changeOrderStatusMutation = ChangeOrderStatusMutation(orderId: orderId, newStatus: "Završena")
+            let changeOrderStatusMutation = ChangeOrderStatusMutation(orderId: orderId, newStatus: currentTitle!)
             apollo.perform(mutation: changeOrderStatusMutation) { [weak self] result, error in
-                self?.loader.stopAnimating()
                 
                 if let error = error {
                     print(error.localizedDescription)
                     return
                 }
                                 
-                if result?.data?.changeOrderStatus?.orderStatus == "Završena" {
-                    //self?.fetchAllOrders() ovo ne treba ako stavimo watcher
+                if (result?.data?.changeOrderStatus)! {
+                    //self?.fetchAllOrders()
+                    
+                    
+                    apollo.fetch(query: AllOrdersQuery(), cachePolicy: .fetchIgnoringCacheData)
+
+                    print("Status promijenjen")
                     self?.tableView.reloadData()
                 }
             }
-        }
+        
     }
     
     override func viewDidLoad() {

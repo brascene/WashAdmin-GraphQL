@@ -43,11 +43,7 @@ public final class AllOrdersQuery: GraphQLQuery {
 public final class ChangeOrderStatusMutation: GraphQLMutation {
   public static let operationDefinition =
     "mutation ChangeOrderStatus($orderId: String!, $newStatus: String!) {" +
-    "  changeOrderStatus(orderId: $orderId, newStatus: $newStatus) {" +
-    "    __typename" +
-    "    orderId" +
-    "    orderStatus" +
-    "  }" +
+    "  changeOrderStatus(orderId: $orderId, newStatus: $newStatus)" +
     "}"
 
   public let orderId: String
@@ -63,22 +59,10 @@ public final class ChangeOrderStatusMutation: GraphQLMutation {
   }
 
   public struct Data: GraphQLMappable {
-    public let changeOrderStatus: ChangeOrderStatus?
+    public let changeOrderStatus: Bool?
 
     public init(reader: GraphQLResultReader) throws {
       changeOrderStatus = try reader.optionalValue(for: Field(responseName: "changeOrderStatus", arguments: ["orderId": reader.variables["orderId"], "newStatus": reader.variables["newStatus"]]))
-    }
-
-    public struct ChangeOrderStatus: GraphQLMappable {
-      public let __typename: String
-      public let orderId: String?
-      public let orderStatus: String?
-
-      public init(reader: GraphQLResultReader) throws {
-        __typename = try reader.value(for: Field(responseName: "__typename"))
-        orderId = try reader.optionalValue(for: Field(responseName: "orderId"))
-        orderStatus = try reader.optionalValue(for: Field(responseName: "orderStatus"))
-      }
     }
   }
 }

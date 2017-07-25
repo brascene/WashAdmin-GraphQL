@@ -29,9 +29,6 @@ query AllOrders {
 #5. Build project again
 
 mutation ChangeOrderStatus($orderId: String!, $newStatus: String!) {
-    changeOrderStatus(orderId: $orderId, newStatus: $newStatus) {
-        orderId
-        orderStatus
-    }
+    changeOrderStatus(orderId: $orderId, newStatus: $newStatus) 
 }
 

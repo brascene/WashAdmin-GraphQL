@@ -9,7 +9,7 @@ var resolvers = {
   RootQuery: {
     hello: (root) => 'Hello world',
     orders: () => {
-      let orders = Orders.find({ $query: {} }, (err, data) => {
+      let orders = Orders.find({}, (err, data) => {
         if (err) {
           console.log(err)
         } else {

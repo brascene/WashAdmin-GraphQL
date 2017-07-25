@@ -26,6 +26,13 @@ class OrdeListTableViewCell: UITableViewCell {
         self.output?.whichButtonClicked(statusButton: sender, orderId: self.orderId.text!)
     }
     
+    @IBAction func orderUToku(_ sender: UIButton) {
+        self.output?.whichButtonClicked(statusButton: sender, orderId: self.orderId.text!)
+    }
+    
+    @IBAction func orderPrimljena(_ sender: UIButton) {
+        self.output?.whichButtonClicked(statusButton: sender, orderId: self.orderId.text!)
+    }
     var output: OrderListCellOutput?
     
     var singleOrder: OrderDetails? {
