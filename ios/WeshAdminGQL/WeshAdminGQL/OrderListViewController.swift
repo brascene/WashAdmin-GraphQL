@@ -17,6 +17,7 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
     //@IBOutlet weak var loader: UIActivityIndicatorView!
     
     var loader = UIActivityIndicatorView()
+    private let refreshControl = UIRefreshControl()
     
     var allOrders: [OrderDetails] = [] {
         didSet {
@@ -45,8 +46,6 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
                 }
                                 
                 if (result?.data?.changeOrderStatus)! {
-                    //self?.fetchAllOrders()
-                    
                     
                     apollo.fetch(query: AllOrdersQuery(), cachePolicy: .fetchIgnoringCacheData)
 
@@ -59,6 +58,10 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        refreshControl.attributedTitle = NSAttributedString(string: "Nove narudzbe ...")
+
 
         // Do any additional setup after loading the view.
         self.title = "Lista narudžbi"
@@ -82,6 +85,9 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
         
         self.tableView.backgroundView = loader
         
+        self.tableView.refreshControl = refreshControl
+        self.tableView.refreshControl?.addTarget(self, action: #selector(self.refreshOrders(refreshControl:)), for: .valueChanged)
+        
         // All orders
         
         fetchAllOrders()
@@ -93,8 +99,16 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
         fetchAllOrders()
     }
     
+    func refreshOrders(refreshControl: UIRefreshControl) {
+        apollo.fetch(query: AllOrdersQuery(), cachePolicy: .fetchIgnoringCacheData)
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
     func backButtonCustom() {
         self.navigationController?.popViewController(animated: true)
+        apollo.fetch(query: AllOrdersQuery(), cachePolicy: .fetchIgnoringCacheData)
     }
     
     func fetchAllOrders() {
