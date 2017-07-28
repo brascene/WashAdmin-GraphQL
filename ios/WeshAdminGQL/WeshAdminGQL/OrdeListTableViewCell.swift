@@ -20,19 +20,6 @@ class OrdeListTableViewCell: UITableViewCell {
     @IBOutlet weak var orderId: UILabel!
     @IBOutlet weak var orderStatus: UILabel!
     
-    // Change order status buttons
-    
-    @IBAction func orderZavrsena(_ sender: UIButton) {
-        self.output?.whichButtonClicked(statusButton: sender, orderId: self.orderId.text!)
-    }
-    
-    @IBAction func orderUToku(_ sender: UIButton) {
-        self.output?.whichButtonClicked(statusButton: sender, orderId: self.orderId.text!)
-    }
-    
-    @IBAction func orderPrimljena(_ sender: UIButton) {
-        self.output?.whichButtonClicked(statusButton: sender, orderId: self.orderId.text!)
-    }
     var output: OrderListCellOutput?
     
     var singleOrder: OrderDetails? {
@@ -44,16 +31,25 @@ class OrdeListTableViewCell: UITableViewCell {
             orderTotal.text = String(describing: (singleOrder?.basket?.count)!)
         }
     }
+    
+    // Change order status buttons
+    @IBAction func orderZavrsena(_ sender: UIButton) {
+        self.output?.whichButtonClicked(statusButton: sender, orderId: self.orderId.text!)
+    }
+    
+    @IBAction func orderUToku(_ sender: UIButton) {
+        self.output?.whichButtonClicked(statusButton: sender, orderId: self.orderId.text!)
+    }
+    
+    @IBAction func orderPrimljena(_ sender: UIButton) {
+        self.output?.whichButtonClicked(statusButton: sender, orderId: self.orderId.text!)
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
 }
