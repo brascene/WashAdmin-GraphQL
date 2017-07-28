@@ -9,16 +9,32 @@ var resolvers = {
   RootQuery: {
     hello: (root) => 'Hello world',
     orders: () => {
-      let orders = Orders.find({}, (err, data) => {
+      return Orders.find({}, (err, data) => {
         if (err) {
           console.log(err)
         } else {
           return data
         }
       })
-      return orders
     },
-    orderedFrom: (_, { id }) => find(orders, 'orderId', id)
+    ordersByStatus: (_, { orderStatus }) => {
+      return Orders.find({'orderStatus': orderStatus}, (err, data) => {
+        if (err) {
+          console.log(err)
+        } else {
+          return data
+        }
+      })
+    },
+    orderById: (_, { orderId }) => {
+      return Orders.findOne({'orderId': orderId}, (err, data) => {
+        if (err) {
+          console.log(err)
+        } else {
+          return data
+        }
+      })
+    }
   },
   Mutation: {
     addItemToBasket: (_, { newItem, orderId }) => {

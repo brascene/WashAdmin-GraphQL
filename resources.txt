@@ -7,6 +7,7 @@ http://dev.apollodata.com
 https://www.learnapollo.com
 https://www.compose.com/articles/using-graphql-with-mongodb/
 https://dev-blog.apollodata.com/bringing-graphql-to-ios-fc46423befa1
+https://medium.freecodecamp.org/so-whats-this-graphql-thing-i-keep-hearing-about-baf4d36c20cf
 
 // JS mongoose queries and promises
 http://blog.revathskumar.com/2015/07/using-promises-with-mongoosejs.html

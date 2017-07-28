@@ -22,7 +22,8 @@ const RootQuery = `
 type RootQuery {
   hello: String,
   orders: [BasketSingleOrder],
-  orderedFrom(userId: String!): UserData
+  ordersByStatus(orderStatus: String!): [BasketSingleOrder]
+  orderById(orderId: String!): BasketSingleOrder
 }
 `
 const SchemaDefinition = `
